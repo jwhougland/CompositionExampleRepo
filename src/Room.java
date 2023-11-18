@@ -9,12 +9,30 @@ public class Room {
      * Assists with identifying the purpose of a room
      */
     public enum RoomPurpose {
-        OFFICE,
-        CONFERENCE_ROOM,
-        LOBBY,
-        BREAK_ROOM,
-        STORAGE,
-        OTHER
+        OFFICE("Office"),
+        CONFERENCE_ROOM("Conference room"),
+        LOBBY("Lobby"),
+        BREAK_ROOM("Break room"),
+        STORAGE("Storage"),
+        OTHER("Other");
+
+        private String readableString;
+
+        /**
+         * Creates a room purpose enum value using the given data.
+         *
+         * @param readableString A readable string version for an enum value.
+         */
+        RoomPurpose(String readableString) {
+            this.readableString = readableString;
+        }
+
+        /**
+         * Gets the readable string version of an enum value.
+         */
+        public String getReadableString() {
+            return readableString;
+        }
     }
 
     /**
