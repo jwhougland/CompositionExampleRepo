@@ -142,7 +142,10 @@ public class Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return Float.compare(squareFootage, room.squareFootage) == 0 && capacity == room.capacity && Objects.equals(name, room.name) && purpose == room.purpose;
+        return Float.compare(squareFootage, room.squareFootage) == 0 &&
+                capacity == room.capacity &&
+                Objects.equals(name, room.name) &&
+                purpose == room.purpose;
     }
 
     /**
