@@ -80,7 +80,7 @@ public class Building {
 
             // Since we are here we have at least one room matching the current purpose, so
             // let's create a high-level print statement for rooms with the current purpose.
-            System.out.print("Room(s) assigned the purpose of " + purpose.getReadableString());
+            System.out.println("Room(s) assigned the purpose of " + purpose.getReadableString());
 
             // Print the description for the matching rooms
             matchingRooms.forEach(mr -> System.out.println("    " + mr.toString()));
