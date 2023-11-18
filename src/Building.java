@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Defines the characteristics of a building
@@ -84,5 +85,39 @@ public class Building {
             // Print the description for the matching rooms
             matchingRooms.forEach(mr -> System.out.println("    " + mr.toString()));
         }
+    }
+
+    /**
+     * Returns a description of the building instance.
+     */
+    @Override
+    public String toString() {
+        return "Building{" +
+                "name='" + name + '\'' +
+                ", rooms=" + rooms +
+                '}';
+    }
+
+    /**
+     * Determines if this building instance is equal to the other building instance.
+     *
+     * @param o Other building instance.
+     *
+     * @return True if this building instance and the other building instance are equal, otherwise false.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Building building = (Building) o;
+        return Objects.equals(name, building.name) && Objects.equals(rooms, building.rooms);
+    }
+
+    /**
+     * Computes and returns a hash code for this building instance.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, rooms);
     }
 }
